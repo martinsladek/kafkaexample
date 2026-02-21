@@ -1,0 +1,15 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: demo-group
+      auto-offset-reset: earliest
+  # temporarily disable DB spring boot auto configuration
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo
+    username: user
+    password: pass
